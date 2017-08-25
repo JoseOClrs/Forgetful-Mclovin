@@ -1,0 +1,129 @@
+<?php
+$datos = [];
+
+if ($this->dat) {
+    $datos = $this->dat;
+}
+$act = "";
+$inact = "";
+if ($datos['estado'] == 'activo') {
+    $act = "selected='selected'";
+    $inact = "";
+} else {
+    $act = "";
+    $inact = "selected='selected'";
+}
+?>
+
+<!-- page content -->
+<div class="right_col" role="main">
+    <div class="">
+
+        <div class="clearfix"></div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="x_panel">
+                    <div class="x_title">
+                        <h2>Administrar Persona</h2>
+
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="x_content">
+
+
+                        <form id="administar_personas_form" method="post" enctype="multipart/form-data" action="<?php echo $this->basePath(); ?>/persona/administrarpersona/<?php echo $datos['id'] ?>" class="form-horizontal form-label-left" novalidate >
+
+
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="id">ID
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input disabled="disabled" id="id" value="<?php echo $datos['id'] ?>" class="form-control col-md-7 col-xs-12" data-validate-length-range="4" data-validate-words="1" name="id"  required="required" type="text">
+                                </div>
+                            </div>
+
+                            <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="nombre"><font color="black">Nombre </font><span class="required"><font color="red">*</font></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input value="<?php echo $datos['nombre'] ?>" id="nombre" 
+                                           class="form-control col-md-7 col-xs-12" data-validate-length-range="8" 
+                                           data-validate-words="1" name="nombre"  required="required" type="text">
+                                </div>
+                            </div>
+                             <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="segundoNombre"><font color="black">Segundo Nombre </font>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input value="<?php echo $datos['segundoNombre'] ?>" id="segundoNombre" 
+                                           class="form-control col-md-7 col-xs-12" data-validate-length-range="8" 
+                                           data-validate-words="1" name="segundoNombre"   type="text">
+                                </div>
+                            </div>
+                             <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="apellido"><font color="black">Apellido </font><span class="required"><font color="red">*</font></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input value="<?php echo $datos['apellido'] ?>" id="apellido" 
+                                           class="form-control col-md-7 col-xs-12" data-validate-length-range="8" 
+                                           data-validate-words="1" name="apellido"  required="required" type="text">
+                                </div>
+                            </div>
+                             <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="segundoApellido"><font color="black">Segundo Apellido </font>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input value="<?php echo $datos['segundoApellido'] ?>" id="segundoApellido" 
+                                           class="form-control col-md-7 col-xs-12" data-validate-length-range="8" 
+                                           data-validate-words="1" name="segundoApellido"  required="required" type="text">
+                                </div>
+                            </div>
+                             <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefono"><font color="black">Telefono </font><span class="required"><font color="red">*</font></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input value="<?php echo $datos['telefono'] ?>" id="telefono" 
+                                           class="form-control col-md-7 col-xs-12" data-validate-length-range="12" 
+                                           data-validate-words="1" name="telefono"  required="required" type="text">
+                                </div>
+                            </div>
+                             <div class="item form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12" for="correo"><font color="black">Correo </font><span class="required"><font color="red">*</font></span>
+                                </label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <input value="<?php echo $datos['correo'] ?>" id="correo" 
+                                           class="form-control col-md-7 col-xs-12" data-validate-length-range="8" 
+                                           data-validate-words="1" name="correo"  required="required" type="text">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-md-3 col-sm-3 col-xs-12"><font color="black">Estado</font></label>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <select name="estado" name="estado" id="estado" class="select2_single form-control" tabindex="-1">
+                                        <option value="activo" <?php echo $act ?>>Activo</option>
+                                        <option value="inactivo" <?php echo $inact ?>>Inactivo</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                            <div class="ln_solid"></div>
+                            <div class="form-group" >
+
+                                <div class="col-md-6 col-md-offset-3"  style="text-align:right">
+                                    <a class="btn btn-dark" href='<?php echo $this->basePath() . '/persona' ?>'>Cancelar</a>
+                                    <button id="send" type="submit" class="btn btn-primary">Actualizar</button>
+
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page content -->

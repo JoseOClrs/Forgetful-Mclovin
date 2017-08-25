@@ -1,0 +1,114 @@
+<?php
+
+$datos = [];
+
+if ($this->dat) {
+    $datos = $this->dat;
+}
+
+?>   
+
+<br>
+<hr>
+
+<div class="row" >
+    <!--    <div class="row" id='oculto' style='display:none;'>-->
+
+    <div class="col-md-12">
+        <!--            <form>-->
+        <form  name="devolucionobjeto_form" id="devolucionobjeto_form" method="post" enctype="multipart/form-data" action="<?php echo $this->basePath(); ?>/devolucionpersona/devolucionobjeto/<?php echo $datos['idPrestamos'] ?>"class="form-horizontal form-label-left" novalidate >
+
+          
+            <center>
+                <legend>Datos de la persona y el objeto</legend>
+            </center>
+            <br>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="idPrestamos">Id Prestamo</label>  
+                <div class="col-md-4">
+                    <input disabled="disabled" id="idPrestamos" name="idPrestamos" type="text" class="form-control input-md" value="<?php echo $datos['idPrestamos'] ?>" >
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="idPersona">id Persona</label>  
+                <div class="col-md-4">
+                    <input readonly id="idPersona" name="idPersona" type="text" class="form-control input-md" value="<?php echo $datos['idPersona'] ?>">
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="nombre">Nombre</label>  
+                <div class="col-md-4">
+                    <input disabled="disabled" id="nombre" name="nombre" type="text" class="form-control input-md" value="<?php echo $datos['nombre'] ?> <?php echo' ' ?><?php echo $datos['segundoNombre'] ?> <?php echo' ' ?> <?php echo $datos['apellido'] ?> <?php echo' ' ?> <?php echo $datos['segundoApellido'] ?>">
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="idObjeto">Id Objeto</label>  
+                <div class="col-md-4">
+                    <input readonly id="idObjeto" name="idObjeto" type="text"class="form-control input-md" value="<?php echo $datos['idObjeto'] ?>">
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="objeto">Objeto</label>  
+                <div class="col-md-4">
+                    <input disabled="disabled" id="nombreObjeto" name="nombreObjeto" type="text"  class="form-control input-md" value="<?php echo $datos['nombreObjeto'] ?>">
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="descripcion">Descripcion de Prestamo</label>
+                <div class="col-md-4">                     
+                    <textarea disabled="disabled" class="form-control" id="descripcion" name="descripcion"> <?php echo $datos['descripcion'] ?></textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="cantidad">Cantidad Prestamo</label>  
+                <div class="col-md-4">
+                    <input disabled="disabled" id="cantidad" name="cantidad" type="text" class="form-control input-md" value="<?php echo $datos['cantidad'] ?>">
+
+                </div>
+            </div>
+
+            <br>
+            <hr>
+            <br>
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="descripcion">Descripcion de la Devolucion</label>
+                <div class="col-md-4">                     
+                    <textarea class="form-control" id="descripcion" name="descripcion"> </textarea>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="cantidad">Cantidad Devolucion</label>  
+                <div class="col-md-4">
+                    <input id="cantidad" name="cantidad" type="number" name="num" min="0" max="500000" class="form-control input-md">
+
+                </div>
+            </div>
+
+            
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="button1id"> </label>
+                <div class="col-md-8">
+                    <button id="send" type="submit" class="btn btn-success" >Devolver</button>
+                    <a href="<?php echo $this->basePath() . '/devolucionpersona' ?>" class="btn btn-default"> <span>Cancelar</span></a>
+                </div>
+            </div>
+
+
+        </form>
+
+
+    </div>
+</div>

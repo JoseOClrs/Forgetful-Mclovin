@@ -1,0 +1,77 @@
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">
+                Administrar Objetos
+            </h3>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>
+                        Crear Objeto
+                    </h2>
+                </div>
+                <div class="col-md-8">
+
+                    <a href="<?php echo $this->basePath() . '/objeto/crearobjeto' ?>" class="btn btn-default"> <span>Crear</span></a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                           Descripcion
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                        <th>
+                            Editar
+                        </th>
+                      
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->objetos as $o) : ?>
+
+                        <tr class="active">
+                            <td>
+                                <?php echo $o['id'] ?>
+                            </td>
+                            <td>
+                                <?php echo $o['nombre'] ?>
+                            </td>
+                            <td>
+                                <?php echo $o['descripcion'] ?>
+                            </td>
+                            <td>
+                                <?php echo $o['estado'] ?>
+                            </td>
+                            
+                            <td>
+                                <a href="<?php echo $this->basePath() ?>/objeto/administrarobjeto/<?php echo $o['id'] ?>"> <img src="<?php echo $this->basePath() ?>/images/modificar.png" width="24" height="22"></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

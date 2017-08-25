@@ -1,0 +1,242 @@
+
+
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">
+                Historial de Objetos Prestados a Persona
+            </h3>
+            <br>
+
+            <hr>
+            <!--            <form>-->
+            <form  id="buscarpersona_form" method="post" enctype="multipart/form-data" action="<?php echo $this->basePath(); ?>/historial" class="form-horizontal form-label-left" novalidate >
+
+                <div class="row">
+                    <div class="col-md-8">
+                        <!-- Select Basic -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="selectbasic">Buscar Persona</label>
+                            <div class="col-md-4">
+                                <select id="idPersona" name="idPersona" class="form-control">
+                                    <option> </option>
+                                    <?php foreach ($this->personas as $pr) : ?>
+                                        <option value="<?php echo $pr['id'] ?>"> <?php echo $pr['nombre'] ?> <?php echo ' ' ?> <?php echo $pr['segundoNombre'] ?> <?php echo ' ' ?><?php echo $pr['apellido'] ?> <?php echo ' ' ?><?php echo $pr['segundoApellido'] ?> </option>
+                                    <?php endforeach; ?>     
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <!-- Button (Double) -->
+                        <div class="form-group">
+                            <label class="col-md-4 control-label" for="button1id"></label>
+                            <div class="col-md-8">
+                                <button id="send" type="submit" class="btn btn-success" >Buscar</button>                           
+                                <a href="<?php echo $this->basePath() . '/' ?>" class="btn btn-default"> <span>Cancelar</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+
+    <div class="row" >
+        <!--    <div class="row" id='oculto' style='display:none;'>-->
+
+        <div class="col-md-12">
+            <!--            <form>-->
+            <form  name="devolucionpersona_form" id="devolucionpersona_form" method="post" enctype="multipart/form-data" action="<?php echo $this->basePath(); ?>/historial" class="form-horizontal form-label-left" novalidate >
+
+                <div class="col-md-12">
+
+                    <h3 class="text-center">
+                        Objetos Prestados
+                    </h3>
+                    <br>
+                    <br>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Id Prestamo
+                                </th>
+                              
+                                <th>
+                                    Persona
+                                </th>
+                               
+                                <th>
+                                    Objeto
+                                </th>
+                                <th>
+                                    Fecha Prestamo
+                                </th>
+                                <th>
+                                    Descripcion del Prestamo
+                                </th>
+                                <th>
+                                    Cantidad
+                                </th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            if ($this->prestamos <> '') {
+
+                                foreach ($this->prestamos as $p) :
+                                    ?>
+                                    <tr class="active">
+                                        <td>
+                                            <?php echo $p['idPrestamos'] ?>
+                                        </td>
+                                       
+                                        <td>
+                                            <?php echo $p['nombre'] ?> <?php echo ' ' ?> <?php echo $p['segundoNombre'] ?> <?php echo ' ' ?> <?php echo $p['apellido'] ?> <?php echo ' ' ?> <?php echo $p['segundoApellido'] ?>
+                                        </td>
+                                       
+                                        <td>
+                                            <?php echo $p['nombreObjeto'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $p['fechaPrestamo'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $p['descripcion'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $p['cantidad'] ?> 
+                                        </td>
+                                      
+                                    </tr>
+                                <?php
+                                endforeach;
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    
+    <br>
+    <hr>
+
+    <div class="row" >
+        <!--    <div class="row" id='oculto' style='display:none;'>-->
+
+        <div class="col-md-12">
+            <!--            <form>-->
+            <form  name="devolucionpersona_form" id="devolucionpersona_form" method="post" enctype="multipart/form-data" action="<?php echo $this->basePath(); ?>/historial" class="form-horizontal form-label-left" novalidate >
+
+                <div class="col-md-12">
+
+                    <h3 class="text-center">
+                        Objetos Devueltos
+                    </h3>
+                    <br>
+                    <br>
+                    <br>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    Id Devolucion
+                                </th>
+                              
+                                <th>
+                                    Persona
+                                </th>
+                               
+                                <th>
+                                    Objeto
+                                </th>
+                                <th>
+                                    Fecha Devolucion
+                                </th>
+                                <th>
+                                    Descripcion de devolucion
+                                </th>
+                                <th>
+                                    Cantidad Devolucion
+                                </th>
+                                <th>
+                                    Fecha Prestamo
+                                </th>
+                                <th>
+                                    Descripcion de Prestamo
+                                </th>
+                                <th>
+                                    Cantidad Prestamo
+                                </th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                            if ($this->devoluciones <> '') {
+
+                                foreach ($this->devoluciones as $d) :
+                                    ?>
+                                    <tr class="active">
+                                        <td>
+                                            <?php echo $d['idDevolucion'] ?>
+                                        </td>
+                                       
+                                        <td>
+                                            <?php echo $d['nombre'] ?> <?php echo ' ' ?> <?php echo $d['segundoNombre'] ?> <?php echo ' ' ?> <?php echo $d['apellido'] ?> <?php echo ' ' ?> <?php echo $d['segundoApellido'] ?>
+                                        </td>
+                                       
+                                        <td>
+                                            <?php echo $d['nombreObjeto'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $d['fechaDevolucion'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $d['descripcionDevolucion'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $d['catidadDevoluion'] ?> 
+                                        </td>
+                                        
+                                        
+                                         <td>
+                                            <?php echo $d['fechaPrestamo'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $d['descripcion'] ?> 
+                                        </td>
+                                        <td>
+                                            <?php echo $d['cantidad'] ?> 
+                                        </td>
+                                      
+                                    </tr>
+                                <?php
+                                endforeach;
+                            }
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    
+    
+
+</div>
+
+

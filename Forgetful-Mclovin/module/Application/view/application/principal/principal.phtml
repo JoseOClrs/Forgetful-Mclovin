@@ -1,0 +1,63 @@
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+
+            <h3 class="text-center">
+                Objetos Prestados
+            </h3>
+            <br>
+            <br>
+            <br>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            #
+                        </th>
+                        <th>
+                            Persona
+                        </th>
+                        <th>
+                            Objeto
+                        </th>
+                        <th>
+                            Descripcion
+                        </th>
+                        <th>
+                            Cantidad
+                        </th>
+                        <th>
+                            Fecha
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->prestamos as $p) : ?>
+                        <tr class="active">
+                            <td>
+                                <?php echo $p['id'] ?>
+                            </td>
+                            <td>
+                                <?php echo $p['nombre'] ?> <?php echo ' ' ?> <?php echo $p['segundoNombre'] ?> <?php echo ' ' ?> <?php echo $p['apellido'] ?> <?php echo ' ' ?> <?php echo $p['segundoApellido'] ?>
+
+                            </td>
+                            <td>
+                                <?php echo $p['nombreObjeto'] ?> 
+                            </td>
+                            <td>
+                                 <?php echo $p['descripcion'] ?> 
+                            </td>
+                            <td>
+                                 <?php echo $p['cantidad'] ?> 
+                            </td>
+                            <td>
+                                <?php echo $p['fechaPrestamo'] ?>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

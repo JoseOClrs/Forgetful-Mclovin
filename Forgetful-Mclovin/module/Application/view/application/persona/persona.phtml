@@ -1,0 +1,99 @@
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <h3 class="text-center">
+                Administrar Personas
+            </h3>
+            <br>
+            <hr>
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>
+                        Crear Personas
+                    </h2>
+                </div>
+                <div class="col-md-8">
+
+                    <a href="<?php echo $this->basePath() . '/persona/crearpersona' ?>" class="btn btn-default"> <span>Crear</span></a>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <thead>
+
+                    <tr>
+                        <th>
+                            Id
+                        </th>
+                        <th>
+                            Nombre
+                        </th>
+                        <th>
+                            Segundo Nombre
+                        </th>
+                        <th>
+                            Apellido
+                        </th>
+                        <th>
+                            Segundo Apellido
+                        </th>
+                        <th>
+                            Telefono
+                        </th>
+                        <th>
+                            Correo
+                        </th>
+                        <th>
+                            Estado
+                        </th>
+                         <th>
+                            Editar
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($this->personas as $p) : ?>
+
+                        <tr class="active">
+                            <td>
+                                <?php echo $p['id'] ?>
+                            </td>
+                            <td>
+                                <?php echo $p['nombre'] ?>
+                            </td>
+                            <td>
+                                <?php echo $p['segundoNombre'] ?>
+                            </td>
+                            <td>
+                                <?php echo $p['apellido'] ?>
+                            </td>
+                            <td>
+                                <?php echo $p['segundoApellido'] ?>
+                            </td>
+                            <td>
+                                <?php echo $p['telefono'] ?>
+                            </td>
+                            <td>
+                                <?php echo $p['correo'] ?>
+                            </td>
+                            <td>
+                                <?php echo $p['estado'] ?>
+                            </td>
+                            <td>
+                                <a href="<?php echo $this->basePath() ?>/persona/administrarpersona/<?php echo $p['id'] ?>"> <img src="<?php echo $this->basePath() ?>/images/modificar.png" width="24" height="22"></a>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

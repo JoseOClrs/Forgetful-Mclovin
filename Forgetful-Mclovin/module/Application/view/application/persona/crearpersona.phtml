@@ -1,0 +1,100 @@
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <center>
+            <h2>
+                
+                Crear Persona
+            </h2>
+            </center>
+        </div>
+    </div>
+    
+    <br>
+<br>    
+<hr>    
+    
+    <div class="row">
+        <div class="col-md-12">
+
+           <form id="nuevo_departamento_form" method="post" enctype="multipart/form-data" action="<?php echo $this->basePath(); ?>/persona/crearpersona" class="form-horizontal form-label-left" novalidate >
+                <fieldset>
+
+                    <!-- Form Name -->
+                    <legend>Crear Persona</legend>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Nombre</label>  
+                        <div class="col-md-4">
+                            <input id="nombre" name="nombre" type="text" placeholder="Primer Nombre" class="form-control input-md" required="required">
+                           
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Segundo Nombre</label>  
+                        <div class="col-md-4">
+                            <input id="segundoNombre" name="segundoNombre" type="text" placeholder="Segundo Nombre (Opcional)" class="form-control input-md" >
+                        
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Apellido</label>  
+                        <div class="col-md-4">
+                            <input id="apellido" name="apellido" type="text" placeholder="Primer Apellido" class="form-control input-md" required="required">
+                           
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Segundo Apellido</label>  
+                        <div class="col-md-4">
+                            <input id="segundoApellido" name="segundoApellido" type="text" placeholder="Segundo Apellido (Opcional)" class="form-control input-md">
+                           
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Telefono</label>  
+                        <div class="col-md-4">
+                            <input id="telefono" name="telefono" type="text" placeholder="Telefono Celular" class="form-control input-md" required="required">
+                            
+                        </div>
+                    </div>
+
+                    <!-- Text input-->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="textinput">Correo</label>  
+                        <div class="col-md-4">
+                            <input id="correo" name="correo" type="text" placeholder="Correo Electronico" class="form-control input-md" required="required">
+                         
+                        </div>
+                    </div>
+<br>
+                    <!-- Button (Double) -->
+                    <div class="form-group">
+                        <label class="col-md-4 control-label" for="button1id"></label>
+                        <div class="col-md-8">
+                          
+                            <button id="send" type="submit" class="btn btn-success">Crear</button>
+                            <a href="<?php echo $this->basePath() . '/persona' ?>" class="btn btn-default"> <span>Cancelar</span></a>
+                          
+                        </div>
+                    </div>
+
+                </fieldset>
+            </form>
+
+
+
+
+        </div>
+    </div>
+</div>
